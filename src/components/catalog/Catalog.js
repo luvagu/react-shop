@@ -4,7 +4,7 @@ import CategoryItem from '../catalog-item/CatalogItem';
 
 import './Catalog.scss'
 
-export default class Catalog extends Component {
+class Catalog extends Component {
     constructor() {
         super();
 
@@ -14,7 +14,7 @@ export default class Catalog extends Component {
                   title: 'hats',
                   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
                   id: 1,
-                  linkUrl: 'shop/hats'
+                  linkUrl: 'shop/hats',
                 },
                 {
                   title: 'jackets',
@@ -33,16 +33,14 @@ export default class Catalog extends Component {
                   imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
                   size: 'large',
                   id: 4,
-                  linkUrl: 'shop/womens',
-                  size: 'large'
+                  linkUrl: 'shop/womens'
                 },
                 {
                   title: 'mens',
                   imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
                   size: 'large',
                   id: 5,
-                  linkUrl: 'shop/mens',
-                  size: 'large'
+                  linkUrl: 'shop/mens'
                 }
               ]
         }
@@ -51,10 +49,12 @@ export default class Catalog extends Component {
     render() {
         return (
             <div className="catalog-container">
-                {this.state.sections.map(({ id, title, imageUrl, size }) => (
-                    <CategoryItem key={id} title={title} imageUrl={imageUrl} size={size} />
+                {this.state.sections.map(({ id, ...sectionKeys }) => (
+                    <CategoryItem key={id} {...sectionKeys} />
                 ))}
             </div>
         )
     }
 }
+
+export default Catalog
