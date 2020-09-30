@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Catalog from '../../components/catalog/Catalog'
+import Catalog from '../../components/catalogMenu/CatalogMenu'
 
 import './Home.scss'
 

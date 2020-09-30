@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import CategoryItem from '../catalog-item/CatalogItem';
+import CategoryItem from '../catalogMenuItem/CatalogMenuItem';
 
-import './Catalog.scss'
+import './CatalogMenu.scss'
 
 class Catalog extends Component {
     constructor() {

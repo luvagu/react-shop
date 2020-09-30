@@ -2,7 +2,7 @@ import React from 'react'
 
 import { withRouter } from 'react-router-dom'
 
-import './CatalogItem.scss'
+import './CatalogMenuItem.scss'
 
 function CategoryItem({ title, imageUrl, size, history, linkUrl, match }) {
     return (

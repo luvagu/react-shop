@@ -1,0 +1,15 @@
+.catalog-collections {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  
+    .title {
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+  
+    .collection-items {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
