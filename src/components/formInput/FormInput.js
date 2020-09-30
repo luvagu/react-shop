@@ -6,7 +6,7 @@ function FormInput({ handleChange, label, ...options }) {
         <div className="input-group">
             <input className="form-input" onChange={handleChange} {...options} />
             {
-                label && (<label className={`${options.value.length && 'shink'} form-input-label`}>{label}</label>)
+                label && (<label className={`${options.value.length && 'shrink'} form-input-label`}>{label}</label>)
             }
         </div>
     )
