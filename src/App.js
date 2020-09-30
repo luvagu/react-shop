@@ -6,6 +6,7 @@ import Home from './pages/home/Home';
 import Shop from './pages/shop/Shop';
 
 import './App.css';
+import SigninRegister from './pages/signin-register/SigninRegister';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/shop' component={Shop} />
+        <Route exact path='/signin' component={SigninRegister} />
       </Switch>
     </Router>
   );
