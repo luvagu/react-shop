@@ -1,5 +1,5 @@
 import cartActionTypes from './cart-types'
-import { groupSameItemsInCart } from './cart-utils'
+import { groupSameItemsInCart, decreaseQtyAndDeleteItem } from './cart-utils'
 
 const INITIAL_STATE = {
     hidden: false,
@@ -17,6 +17,16 @@ const cartReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 cartItems: groupSameItemsInCart(state.cartItems, action.payload)
+            }
+        case cartActionTypes.DECREASE_QTY_AND_DELETE_ITEM:
+            return {
+                ...state,
+                cartItems: decreaseQtyAndDeleteItem(state.cartItems, action.payload)
+            }
+        case cartActionTypes.DELETE_ITEM_FROM_CART:
+            return {
+                ...state,
+                cartItems: state.cartItems.filter(item => item.id !== action.payload.id)
             }
         default:
             return state
