@@ -8,8 +8,8 @@ function CatalogCollections({ title, items }) {
         <div className="catalog-collections">
             <div className="title">{title}</div>
             <div className="collection-items">
-                {items.filter((item, i) => i < 4).map(({id, ...itemKeys}) => (
-                    <CollectionItem key={id} {...itemKeys} />
+                {items.filter((item, i) => i < 4).map(item => (
+                    <CollectionItem key={item.id} item={item} />
                 ))}
             </div>
         </div>
