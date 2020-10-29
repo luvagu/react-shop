@@ -1,12 +1,13 @@
 import React from 'react'
 import CollectionItem from '../catalogCollectionItem/CatalogCollectionItem'
+import { withRouter } from 'react-router-dom'
 
 import './CatalogCollections.scss'
 
-function CatalogCollections({ title, items }) {
+function CatalogCollections({ title, items, routeName, history, match }) {
     return (
         <div className="catalog-collections">
-            <div className="title">{title}</div>
+            <h1 onClick={() => history.push(`${match.url}/${routeName}`)} className="title">{title}</h1>
             <div className="collection-items">
                 {items.filter((item, i) => i < 4).map(item => (
                     <CollectionItem key={item.id} item={item} />
@@ -16,4 +17,4 @@ function CatalogCollections({ title, items }) {
     )
 }
 
-export default CatalogCollections
+export default withRouter(CatalogCollections)

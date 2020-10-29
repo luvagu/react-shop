@@ -2,13 +2,14 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
-import { selectShopCollections } from '../../redux/shop/shop-selectors'
+import { selectCatalogCollectionOverview } from '../../redux/shop/shop-selectors'
 
 import CatalogCollections from '../catalogCollections/CatalogCollections'
 
 import './CatalogOverview.scss'
 
 function CatalogOverview({ collections }) {
+    console.log('collections', collections)
     return (
         <div className="catalog-overview">
             { collections.map(({id, ...collectionKeys}) => (<CatalogCollections key={id} {...collectionKeys} />)) }
@@ -16,7 +17,7 @@ function CatalogOverview({ collections }) {
     )
 }
 
-const mapStateToProps = createStructuredSelector({ collections: selectShopCollections})
+const mapStateToProps = createStructuredSelector({ collections: selectCatalogCollectionOverview})
 
 export default connect(mapStateToProps)(CatalogOverview)
 

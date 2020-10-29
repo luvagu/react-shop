@@ -8,16 +8,16 @@ import CatalogMenuItem from '../catalogMenuItem/CatalogMenuItem'
 
 import './CatalogMenu.scss'
 
-function CatalogMenu({ sections }) {
+function CatalogMenu({ categories }) {
     return (
       <div className="catalog-container">
-          {sections.map(({ id, ...sectionKeys }) => (
+          {categories.map(({ id, ...sectionKeys }) => (
               <CatalogMenuItem key={id} {...sectionKeys} />
           ))}
       </div>
     )
 }
 
-const mapStateToProps = createStructuredSelector({ sections: selectCatalogSection })
+const mapStateToProps = createStructuredSelector({ categories: selectCatalogSection })
 
 export default connect(mapStateToProps)(CatalogMenu)
