@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Catalog from '../../components/catalogMenu/CatalogMenu'
+import CatalogMenu from '../../components/catalogMenu/CatalogMenu'
 
 import './Home.scss'
 
 function Home() {
     return (
         <div className="home-container">
-            <Catalog />
+            <CatalogMenu />
         </div>
     )
 }

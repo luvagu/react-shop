@@ -4,15 +4,15 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { selectCatalogSection } from '../../redux/catalog/catalog-selectors'
 
-import CategoryItem from '../catalogMenuItem/CatalogMenuItem'
+import CatalogMenuItem from '../catalogMenuItem/CatalogMenuItem'
 
 import './CatalogMenu.scss'
 
-function Catalog({ sections }) {
+function CatalogMenu({ sections }) {
     return (
       <div className="catalog-container">
           {sections.map(({ id, ...sectionKeys }) => (
-              <CategoryItem key={id} {...sectionKeys} />
+              <CatalogMenuItem key={id} {...sectionKeys} />
           ))}
       </div>
     )
@@ -20,4 +20,4 @@ function Catalog({ sections }) {
 
 const mapStateToProps = createStructuredSelector({ sections: selectCatalogSection })
 
-export default connect(mapStateToProps)(Catalog)
+export default connect(mapStateToProps)(CatalogMenu)

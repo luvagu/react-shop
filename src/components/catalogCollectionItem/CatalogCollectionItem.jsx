@@ -5,9 +5,9 @@ import { addItemToCart } from '../../redux/cart/cart-actions'
 
 import FormButton from '../formButton/FormButton'
 
-import './CollectionItem.scss'
+import './CatalogCollectionItem.scss'
 
-function CollectionItem({ item, addItemToCart }) {
+function CatalogCollectionItem({ item, addItemToCart }) {
     const { imageUrl, name, price } = item
     return (
         <div className="collection-item">
@@ -25,4 +25,4 @@ const mapDispatchToProps = (dispatch) => ({
     addItemToCart: (item) => dispatch(addItemToCart(item))
 })
 
-export default connect(null, mapDispatchToProps)(CollectionItem)
+export default connect(null, mapDispatchToProps)(CatalogCollectionItem)

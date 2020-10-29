@@ -1,27 +1,16 @@
-import React, { Component } from 'react'
-import DUMMY_DATA from './dummy.data'
-import CatalogCollections from '../../components/catalogCollections/CatalogCollections'
+import React from 'react'
+import { Route } from 'react-router-dom'
 
-import './Shop.scss'
+import CatalogOverview from '../../components/catalogOverview/CatalogOverview'
+import Category from '../category/Category'
 
-class Shop extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            collections: DUMMY_DATA
-        }
-    }
-
-    render() {
-        return (
-            <div>
-                {this.state.collections.map(({id, ...collectionKeys}) => (
-                    <CatalogCollections key={id} {...collectionKeys} />
-                ))}
-            </div>
-        )
-    }
+function Shop() {
+    return (
+        <div>
+            <Route exact path={`${match.path}`} component={CatalogOverview}></Route>
+            <Route path={`${match.path}/:categoryId`} component={Category}></Route>
+        </div>
+    )
 }
 
 export default Shop
