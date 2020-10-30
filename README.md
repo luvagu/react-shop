@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### See working demo at:
+
+Go to: [https://react-shop-2021.herokuapp.com/](https://react-shop-2021.herokuapp.com)
+
+### This project was bootstrapped with:
+
+[Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
