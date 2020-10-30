@@ -9,7 +9,7 @@ import CatalogCollections from '../catalogCollections/CatalogCollections'
 import './CatalogOverview.scss'
 
 function CatalogOverview({ collections }) {
-    console.log('collections', collections)
+    // console.log('collections', collections)
     return (
         <div className="catalog-overview">
             { collections.map(({id, ...collectionKeys}) => (<CatalogCollections key={id} {...collectionKeys} />)) }
