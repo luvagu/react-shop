@@ -1,9 +1,10 @@
 import React from 'react'
-import './FormButton.scss'
 
-function FormButton({ children, isGoogleSignIn, inverted, ...options }) {
+import { FormButtonContainer } from './FormButtonStyles'
+
+function FormButton({ children, ...props }) {
     return (
-        <button className={`${inverted ? 'inverted' : ''} ${isGoogleSignIn ? 'google-sign-in' : ''} form-button`} {...options}>{children}</button>
+        <FormButtonContainer {...props}>{children}</FormButtonContainer>
     )
 }
 

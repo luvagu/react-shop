@@ -4,20 +4,21 @@ import { connect } from 'react-redux'
 import { selectCatalogCollection } from '../../redux/shop/shop-selectors'
 
 import CatalogCollectionItem from '../../components/catalogCollectionItem/CatalogCollectionItem'
+import { CatalogCollectionContainer, CollectionItemsContainer, CollectionTitle } from './CatalogCollectionStyles'
 
-import './CatalogCollection.scss'
+
 
 function CatalogCollection({ collection }) {
     const { title, items } =  collection
     return (
-        <div className="catalog-collection">
-            <h2 className="title">{title}</h2>
-            <div className="items">
+        <CatalogCollectionContainer>
+            <CollectionTitle>{title}</CollectionTitle>
+            <CollectionItemsContainer>
                 {items.map(item => (
                     <CatalogCollectionItem key={item.id} item={item} />
                 ))}
-            </div>
-        </div>
+            </CollectionItemsContainer>
+        </CatalogCollectionContainer>
     )
 }
 

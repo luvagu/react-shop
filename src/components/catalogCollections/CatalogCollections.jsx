@@ -2,18 +2,18 @@ import React from 'react'
 import CollectionItem from '../catalogCollectionItem/CatalogCollectionItem'
 import { withRouter } from 'react-router-dom'
 
-import './CatalogCollections.scss'
+import { CatalogCollectionsContainer, CollectionItemsContainer, TitleContainer } from './CatalogCollectionsStyles'
 
 function CatalogCollections({ title, items, routeName, history, match }) {
     return (
-        <div className="catalog-collections">
-            <h1 onClick={() => history.push(`${match.url}/${routeName}`)} className="title">{title}</h1>
-            <div className="collection-items">
+        <CatalogCollectionsContainer>
+            <TitleContainer onClick={() => history.push(`${match.path}/${routeName}`)}>{title}</TitleContainer>
+            <CollectionItemsContainer>
                 {items.filter((item, i) => i < 4).map(item => (
                     <CollectionItem key={item.id} item={item} />
                 ))}
-            </div>
-        </div>
+            </CollectionItemsContainer>
+        </CatalogCollectionsContainer>
     )
 }
 
