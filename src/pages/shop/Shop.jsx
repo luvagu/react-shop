@@ -2,7 +2,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 
 import CatalogOverview from '../../components/catalogOverview/CatalogOverview'
-import CatalogCollection from '../CatalogCollection/CatalogCollection'
+import CatalogCollection from '../catalogCollection/CatalogCollection'
 
 function Shop({ match }) {
     return (
