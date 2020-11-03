@@ -5,7 +5,6 @@ import StripeCheckout from 'react-stripe-checkout'
 function StripeButton({ ammount }) {
     const priceForStripe = Math.round(ammount * 100)
     const stripeTestKey = 'pk_test_519LE50LWDjvp29Bflo1RmTfOE9ZAIoLgOR5FPq0yujNgchqvkTm7xEg4GQZjOMKywqrThByBboSffzMlRQbim1nN00thJDBzDg'
-    // console.log('priceForStripe', priceForStripe)
 
     const onToken = (token) => {
         console.log(token)

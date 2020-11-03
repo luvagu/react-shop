@@ -4,7 +4,8 @@ import { auth, createUserProfileDocument } from '../../firebase/firebase.utils'
 import FormInput from '../formInput/FormInput'
 import FormButton from '../formButton/FormButton'
 
-import './SignUp.scss'
+import { SignUpContainer } from './SignUpStyles'
+
 
 class SignUp extends Component {
     constructor() {
@@ -56,8 +57,8 @@ class SignUp extends Component {
         const { displayName, email, password, confirmPassword } = this.state
 
         return (
-            <div className="sign-up">
-                <h2 className="title">I do not have an account</h2>
+            <SignUpContainer>
+                <h2>I do not have an account</h2>
                 <span>Sign Up is easy and only takes a few seconds</span>
                 <form className="sign-up-form" onSubmit={this.handleSubmit}>
                     <FormInput 
@@ -94,7 +95,7 @@ class SignUp extends Component {
                     />
                     <FormButton type='submit'>Sign Up</FormButton>
                 </form>
-            </div>
+            </SignUpContainer>
         )
     }
 }

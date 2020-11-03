@@ -5,7 +5,7 @@ import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
 import FormInput from '../formInput/FormInput'
 import FormButton from '../formButton/FormButton'
 
-import './SignIn.scss'
+import { SignInButtons, SignInContainer } from './SignInStyles'
 
 class SignIn extends Component {
     constructor() {
@@ -37,20 +37,20 @@ class SignIn extends Component {
     
     render() {
         return (
-            <div className="sign-in">
+            <SignInContainer>
                 <h2>I'm an existing customer</h2>
                 <span>Sign in with your email and password</span>
 
                 <form onSubmit={this.handleSubmit}>
                     <FormInput type="email" name="email" value={this.state.email} handleChange={this.handleChange} label="email" required='required' />
                     <FormInput type="password" name="password" value={this.state.password} handleChange={this.handleChange} label="password" required='required' />
-                    <div className="buttons">
+                    <SignInButtons>
                         <FormButton type='submit'>Sign In</FormButton>
                         <FormButton type='button' onClick={signInWithGoogle} isGoogleSignIn>Sign In with Google</FormButton>
-                    </div>
+                    </SignInButtons>
                     
                 </form>
-            </div>
+            </SignInContainer>
         )
     }
 }

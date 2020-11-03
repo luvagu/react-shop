@@ -19,8 +19,3 @@ function CatalogOverview({ collections }) {
 const mapStateToProps = createStructuredSelector({ collections: selectCatalogCollectionOverview})
 
 export default connect(mapStateToProps)(CatalogOverview)
-
-
-
-
-

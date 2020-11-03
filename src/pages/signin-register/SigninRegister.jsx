@@ -1,14 +1,15 @@
 import React from 'react'
 import SignIn from '../../components/signIn/SignIn'
 import SignUp from '../../components/signUp/SignUp'
-import './SigninRegister.scss'
+
+import { SignInRegisterContainer } from './SigninRegisterStyles'
 
 function SigninRegister() {
     return (
-        <div className="sign-in-and-register">
+        <SignInRegisterContainer>
             <SignIn />
             <SignUp />          
-        </div>
+        </SignInRegisterContainer>
     )
 }
 
