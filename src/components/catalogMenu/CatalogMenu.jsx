@@ -6,15 +6,15 @@ import { selectCatalogSection } from '../../redux/catalog/catalog-selectors'
 
 import CatalogMenuItem from '../catalogMenuItem/CatalogMenuItem'
 
-import './CatalogMenu.scss'
+import { CatalogContainer } from './CatalogMenuStyles'
 
 function CatalogMenu({ categories }) {
     return (
-      <div className="catalog-container">
+      <CatalogContainer>
           {categories.map(({ id, ...sectionKeys }) => (
               <CatalogMenuItem key={id} {...sectionKeys} />
           ))}
-      </div>
+      </CatalogContainer>
     )
 }
 

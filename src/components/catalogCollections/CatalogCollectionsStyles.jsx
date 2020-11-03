@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const CatalogCollectionsContainer = styled.div`
   display: flex;

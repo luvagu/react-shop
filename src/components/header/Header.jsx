@@ -11,7 +11,7 @@ import { auth } from '../../firebase/firebase.utils'
 import CartIcon from '../cartIcon/CartIcon'
 import CartDropDown from '../cartDropdown/CartDropDown'
 
-import { HeaderContainer, LogoLinkContainer, OptionDiv, OptionLink, OptionsContainer } from './HeaderStyles'
+import { HeaderContainer, LogoLinkContainer, OptionLink, OptionsContainer } from './HeaderStyles'
 
 function Header({ currentUser, hidden }) {
     return (

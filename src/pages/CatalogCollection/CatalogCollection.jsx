@@ -6,8 +6,6 @@ import { selectCatalogCollection } from '../../redux/shop/shop-selectors'
 import CatalogCollectionItem from '../../components/catalogCollectionItem/CatalogCollectionItem'
 import { CatalogCollectionContainer, CollectionItemsContainer, CollectionTitle } from './CatalogCollectionStyles'
 
-
-
 function CatalogCollection({ collection }) {
     const { title, items } =  collection
     return (

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import FormButton from '../formButton/FormButton';
+import FormButton from '../formButton/FormButton'
 
 export const CollectionItemContainer = styled.div`
   width: 22vw;
