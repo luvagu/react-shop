@@ -21,9 +21,9 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userAuth) return
 
     const userRef = firestore.doc(`users/${userAuth.uid}`)
-    const userSnapShot = await userRef.get()
+    const userSnapshot = await userRef.get()
 
-    if (!userSnapShot.exists) {
+    if (!userSnapshot.exists) {
         const { displayName, email } = userAuth
         const createdAt =  new Date()
 
@@ -40,6 +40,24 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     }
 
     return userRef
+}
+
+export const convertCollectionsSnapshotToMap = (collections) => {
+    const transformCollection = collections.docs.map(doc => {
+        const { title, items } = doc.data()
+
+        return {
+            routeName: encodeURI(title.toLowerCase()),
+            id: doc.id,
+            title: title,
+            items
+        }
+    })
+
+    return transformCollection.reduce((ac, collection) => {
+        ac[collection.title.toLowerCase()] = collection
+        return ac
+    }, {})
 }
 
 // Firebase add batch data
