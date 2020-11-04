@@ -6,7 +6,7 @@ import { selectCollectionFetching } from '../../redux/shop/shop-selectors'
 import Spinner from '../../components/spinner/Spinner'
 import CatalogOverview from '../../components/catalogOverview/CatalogOverview'
 
-const mapStateToProps = createStructuredSelector({ isCollectionFetching: selectCollectionFetching })
+const mapStateToProps = createStructuredSelector({ isLoading: selectCollectionFetching })
 
 const CatalogOverviewContainer = compose(
     connect(mapStateToProps),
