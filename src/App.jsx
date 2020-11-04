@@ -6,6 +6,9 @@ import { createStructuredSelector } from 'reselect'
 import { selectCurrentUser } from './redux/user/user-selectors'
 import { setCurrentUser } from './redux/user/user-actions'
 
+// @ToDo - We call this here to insert the shop collections in batches to the firebase store
+// import { selectCatalogCollectionOverview } from './redux/shop/shop-selectors' 
+
 import Header from './components/header/Header'
 import Home from './pages/home/Home'
 import Shop from './pages/shop/Shop'
@@ -23,7 +26,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    const { setCurrentUser } = this.props
+    const { setCurrentUser, collectionsArray } = this.props
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
@@ -38,6 +41,7 @@ class App extends Component {
         })
       } else {
         setCurrentUser(userAuth)
+        // addCollectionAndDocuments('collections', collectionsArray.map(({ title, items }) => ({ title, items })))
       }
     })
   }
@@ -61,7 +65,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({ currentUser: selectCurrentUser })
+const mapStateToProps = createStructuredSelector({ 
+  currentUser: selectCurrentUser,
+  // collectionsArray: selectCatalogCollectionOverview 
+})
 
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
