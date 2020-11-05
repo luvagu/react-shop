@@ -14,7 +14,7 @@ import Home from './pages/home/Home'
 import Shop from './pages/shop/Shop'
 import Checkout from './pages/checkout/Checkout'
 
-import { auth, createUserProfileDocument } from './firebase/firebase.utils'
+// import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 
 import SigninRegister from './pages/signin-register/SigninRegister'
 
@@ -28,22 +28,23 @@ class App extends Component {
 
     const { setCurrentUser } = this.props
 
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth)
+    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+    //   if (userAuth) {
+    //     const userRef = await createUserProfileDocument(userAuth)
 
-        userRef.onSnapshot(snapshot => {
-          setCurrentUser({
-              id: snapshot.id,
-              ...snapshot.data()
-            }
-          )
-        })
-      } else {
-        setCurrentUser(userAuth)
-        // addCollectionAndDocuments('collections', collectionsArray.map(({ title, items }) => ({ title, items })))
-      }
-    })
+    //     userRef.onSnapshot(snapshot => {
+    //       setCurrentUser({
+    //           id: snapshot.id,
+    //           ...snapshot.data()
+    //         }
+    //       )
+    //     })
+    //   } else {
+    //     setCurrentUser(userAuth)
+    //     // addCollectionAndDocuments('collections', collectionsArray.map(({ title, items }) => ({ title, items })))
+    //   }
+    // })
+
   }
 
   componentWillUnmount() {
