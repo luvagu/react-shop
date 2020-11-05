@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import { auth, createUserProfileDocument } from '../../firebase/firebase.utils'
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
+
+import { signUpStart } from '../../redux/user/user-actions'
 
 import FormInput from '../formInput/FormInput'
 import FormButton from '../formButton/FormButton'
@@ -8,48 +11,45 @@ import { SignUpContainer } from './SignUpStyles'
 
 
 class SignUp extends Component {
-    constructor() {
-        super()
-
-        this.state = {
-            displayName: '',
-            email: '',
-            password: '',
-            confirmPassword: ''    
-        }
+    state = {
+        displayName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''    
     }
 
     handleSubmit = async (e) => {
         e.preventDefault()
 
+        const { signUpStart } = this.props
         const { displayName, email, password, confirmPassword } = this.state
 
         if (password !== confirmPassword) {
             alert('Passwords don\'t match')
             return
         }
+        
+        signUpStart(displayName, email, password, confirmPassword)
 
-        try {
-            const { user } = await auth.createUserWithEmailAndPassword(email, password)
+        // try {
+        //     const { user } = await auth.createUserWithEmailAndPassword(email, password)
 
-            await createUserProfileDocument(user, { displayName })
+        //     await createUserProfileDocument(user, { displayName })
 
-            this.setState({
-                displayName: '',
-                email: '',
-                password: '',
-                confirmPassword: ''
-            })
+        //     this.setState({
+        //         displayName: '',
+        //         email: '',
+        //         password: '',
+        //         confirmPassword: ''
+        //     })
 
-        } catch (error) {
-            console.log(error)
-        }
+        // } catch (error) {
+        //     console.log(error)
+        // }
     }
 
     handleChange = async (e) => {
-
         const { name, value } = e.target
-
         this.setState({ [name]: value })
     }
 
@@ -100,4 +100,8 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp
+const mapDispatchToProps = (dispatch) => ({
+    signUpStart: (displayName, email, password, confirmPassword) => dispatch(signUpStart({ displayName, email, password, confirmPassword }))
+})
+
+export default connect(null, mapDispatchToProps)(SignUp)
