@@ -4,9 +4,9 @@ export const googleSignInStart = () => ({
     type: userActionTypes.GOOGLE_SIGN_IN_START
 })
 
-export const emailSignInStart = (emailAndPassword) => ({
+export const emailSignInStart = (userCredentials) => ({
     type: userActionTypes.EMAIL_SIGN_IN_START,
-    payload: emailAndPassword
+    payload: userCredentials
 })
 
 export const signInSuccess = (user) => ({
