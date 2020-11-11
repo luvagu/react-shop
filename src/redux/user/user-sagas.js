@@ -57,7 +57,7 @@ export function* onCheckUserSession() {
     yield takeLatest(userActionTypes.CHECK_USER_SESSION, isUserAuthenticated)
 }
 
-export function* signUpWithEmail({ payload: { displayName, email, password } }) {
+export function* signUpWithEmail({ payload: { email, password, displayName } }) {
     try {
         const { user } = yield auth.createUserWithEmailAndPassword(email, password)
         yield _getSnapshotFromUserAuth(user, { displayName })

@@ -36,14 +36,15 @@ export const signOutFailure = (error) => ({
     payload: error
 })
 
-export const signUpStart = (emailAndPassword) => ({
+export const signUpStart = (userCredentials) => ({
     type: userActionTypes.SIGN_UP_START,
-    payload: emailAndPassword
+    payload: userCredentials
 })
 
-// export const signUpSuccess = (user) => ({
+// No need to use this action as we'll be sharing the signInSuccess action and pass the required object
+// export const signUpSuccess = ({ user, additionalData }) => ({
 //     type: userActionTypes.SIGN_UP_SUCCESS,
-//     payload: user
+//     payload: { user, additionalData }
 // })
 
 export const signUpFailure = (error) => ({

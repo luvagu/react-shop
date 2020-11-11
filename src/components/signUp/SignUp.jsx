@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { createStructuredSelector } from 'reselect'
 
 import { signUpStart } from '../../redux/user/user-actions'
 
@@ -29,7 +28,7 @@ class SignUp extends Component {
             return
         }
         
-        signUpStart(displayName, email, password, confirmPassword)
+        signUpStart({ displayName, email, password })
 
         // try {
         //     const { user } = await auth.createUserWithEmailAndPassword(email, password)
@@ -101,7 +100,7 @@ class SignUp extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    signUpStart: (displayName, email, password, confirmPassword) => dispatch(signUpStart({ displayName, email, password, confirmPassword }))
+    signUpStart: (userCredentials) => dispatch(signUpStart(userCredentials))
 })
 
 export default connect(null, mapDispatchToProps)(SignUp)

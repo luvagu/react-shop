@@ -21,7 +21,7 @@ class SignIn extends Component {
         const { emailSignInStart } = this.props
         const { email, password } = this.state
 
-        emailSignInStart(email, password)
+        emailSignInStart({ email, password })
     }
 
     handleChange = e => {
@@ -52,7 +52,7 @@ class SignIn extends Component {
 
 const mapDispatchtoProps = (dispatch) => ({
     googleSignInStart: () => dispatch(googleSignInStart()),
-    emailSignInStart: (email, password) => dispatch(emailSignInStart({ email, password }))
+    emailSignInStart: (emailAndPassword) => dispatch(emailSignInStart(emailAndPassword))
 })
 
 export default connect(null, mapDispatchtoProps)(SignIn)
