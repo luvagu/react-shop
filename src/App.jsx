@@ -19,6 +19,7 @@ import SigninRegister from './pages/signin-register/SigninRegister'
 import './App.css'
 
 function App({ checkUserSession, currentUser }) {
+  
   useEffect(() => {
     checkUserSession()
   }, [checkUserSession])  
