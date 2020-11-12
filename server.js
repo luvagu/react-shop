@@ -4,9 +4,6 @@ const path = require('path')
 
 if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
-// @TODO - remove
-// require('dotenv').config()
-
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 
 const app = express()
@@ -22,11 +19,6 @@ if (process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, 'client/build', 'index.html'))
     })
-
-    // @TODO - remove
-    // app.get('/', (req, res) => {
-    //     res.send('<h1>Helloooo 🚀</h1>')
-    // })
 }
 
 app.post('/payment', (req, res) => {
@@ -44,11 +36,6 @@ app.post('/payment', (req, res) => {
         }
     })
 })
-
-// @TODO - remove
-// app.get('/payment', (req, res) => {
-//     res.status(200).json({ success: 'hi' })
-// })
 
 app.listen(port, (err) => {
     if (err) throw err
