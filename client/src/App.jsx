@@ -16,7 +16,7 @@ import Shop from './pages/shop/Shop'
 import Checkout from './pages/checkout/Checkout'
 import SigninRegister from './pages/signin-register/SigninRegister'
 
-import './App.css'
+import { GlobalStyle } from './GlobalStyles'
 
 function App({ checkUserSession, currentUser }) {
   
@@ -26,6 +26,7 @@ function App({ checkUserSession, currentUser }) {
 
   return (
     <div>
+      <GlobalStyle />
       <Header />
       <Switch>
         <Route exact path='/' component={Home} />
