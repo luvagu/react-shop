@@ -18,5 +18,4 @@ export const ItemInfoContainer = styled.div`
     align-items: flex-start;
     justify-content: center;
     padding: 10px 20px;
-    font-size: 16px;
 `
