@@ -39,5 +39,5 @@ app.post('/payment', (req, res) => {
 
 app.listen(port, (err) => {
     if (err) throw err
-    console.log('Server running on port ' + port)
+    console.log('Server listening on port ' + port)
 })

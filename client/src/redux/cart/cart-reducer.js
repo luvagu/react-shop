@@ -2,7 +2,7 @@ import cartActionTypes from './cart-types'
 import { groupSameItemsInCart, decreaseQtyAndDeleteItem } from './cart-utils'
 
 const INITIAL_STATE = {
-    hidden: false,
+    hidden: true,
     cartItems: []
 }
 
@@ -32,6 +32,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 cartItems: []
+            }
+        case cartActionTypes.SET_CART_FROM_FIREBASE:
+            return {
+                ...state,
+                cartItems: action.payload
             }
         default:
             return state
