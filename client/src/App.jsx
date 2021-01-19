@@ -16,6 +16,7 @@ import Home from './pages/home/Home'
 // import Checkout from './pages/checkout/Checkout'
 // import SigninRegister from './pages/signin-register/SigninRegister'
 import Spinner from './components/spinner/Spinner'
+import ErrorBoundary from './components/errorBoundary/ErrorBoundary'
 
 import { GlobalStyle } from './GlobalStyles'
 
@@ -35,11 +36,13 @@ const App = ({ checkUserSession, currentUser }) => {
       <Header />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Suspense fallback={<Spinner />}>
-          <Route path='/shop' component={Shop} />
-          <Route exact path='/checkout' component={Checkout} />
-          <Route exact path='/signin' render={() => currentUser ? (<Redirect to='/' />) : (<SigninRegister />) }  />
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={<Spinner />}>
+            <Route path='/shop' component={Shop} />
+            <Route exact path='/checkout' component={Checkout} />
+            <Route exact path='/signin' render={() => currentUser ? (<Redirect to='/' />) : (<SigninRegister />) }  />
+          </Suspense>
+        </ErrorBoundary>
       </Switch>
     </div>
   )

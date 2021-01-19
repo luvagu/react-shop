@@ -12,7 +12,6 @@ const CatalogOverviewContainer = lazy(() => import('../../containers/catalogOver
 const CatalogCollectionsContainer = lazy(() => import('../../containers/catalogCollections/CatalogCollectionsContainer'))
 
 const Shop = ({ fetchCollectionsStart, match }) => {
-    
     useEffect(() => {
         fetchCollectionsStart()
     }, [fetchCollectionsStart])
