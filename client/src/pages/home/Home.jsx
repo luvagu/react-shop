@@ -4,7 +4,7 @@ import CatalogMenu from '../../components/catalogMenu/CatalogMenu'
 
 import { HomeContainer } from './HomeStyles'
 
-function Home() {
+const Home = () => {
     return (
         <HomeContainer>
             <CatalogMenu />

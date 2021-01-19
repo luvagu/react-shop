@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 
 import { CatalogCollectionsContainer, CollectionItemsContainer, TitleContainer } from './CatalogCollectionsStyles'
 
-function CatalogCollections({ title, items, routeName, history, match }) {
+const CatalogCollections = ({ title, items, routeName, history, match }) => {
     return (
         <CatalogCollectionsContainer>
             <TitleContainer onClick={() => history.push(`${match.path}/${routeName}`)}>{title}</TitleContainer>

@@ -7,7 +7,7 @@ import { fetchCollectionsStart } from '../../redux/shop/shop-actions'
 import CatalogOverviewContainer from '../../containers/catalogOverview/CatalogOverviewContainer'
 import CatalogCollectionsContainer from '../../containers/catalogCollections/CatalogCollectionsContainer'
 
-function Shop({ fetchCollectionsStart, match }) {
+const Shop = ({ fetchCollectionsStart, match }) => {
     
     useEffect(() => {
         fetchCollectionsStart()

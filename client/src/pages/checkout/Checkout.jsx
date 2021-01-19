@@ -9,7 +9,7 @@ import StripeButton from '../../components/stripeButton/StripeButton'
 
 import { CheckoutContainer, CheckoutHeader, HeaderBlock, TotalContainer } from './CheckoutStyles'
 
-function Cart({ cartItems, cartTotal }) {
+const Cart = ({ cartItems, cartTotal }) => {
     return (
         <CheckoutContainer>
             <CheckoutHeader>

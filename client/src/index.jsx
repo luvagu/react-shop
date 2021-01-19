@@ -9,7 +9,6 @@ import { store, persistor } from './redux/store'
 
 import App from './App'
 
-
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
@@ -19,5 +18,4 @@ ReactDOM.render(
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')
-);
-
+)

@@ -2,7 +2,7 @@ import React from 'react'
 import StripeCheckout from 'react-stripe-checkout'
 import axios from 'axios'
 
-function StripeButton({ ammount }) {
+const StripeButton = ({ ammount }) => {
     const amountForStripe = Math.round(ammount * 100)
     const stripeTestKey = 'pk_test_519LE50LWDjvp29Bflo1RmTfOE9ZAIoLgOR5FPq0yujNgchqvkTm7xEg4GQZjOMKywqrThByBboSffzMlRQbim1nN00thJDBzDg'
 

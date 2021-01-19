@@ -9,7 +9,7 @@ import FormButton from '../formButton/FormButton'
 
 import { SignInButtons, SignInContainer } from './SignInStyles'
 
-function SignIn({ emailSignInStart, googleSignInStart  }) {
+const SignIn = ({ emailSignInStart, googleSignInStart  }) => {
     const [userCredentials, setUserCredentials] = useState({ email: '', password: '' })
     
     const { email, password } = userCredentials

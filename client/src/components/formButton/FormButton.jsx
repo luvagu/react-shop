@@ -2,7 +2,7 @@ import React from 'react'
 
 import { FormButtonContainer } from './FormButtonStyles'
 
-function FormButton({ children, ...props }) {
+const FormButton = ({ children, ...props }) => {
     return (
         <FormButtonContainer {...props}>{children}</FormButtonContainer>
     )

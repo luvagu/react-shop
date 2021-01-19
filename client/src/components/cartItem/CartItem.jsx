@@ -2,7 +2,7 @@ import React from 'react'
 
 import { CartItemContainer, ItemImage, ItemInfoContainer } from './CartItemStyles'
 
-function CartItem({ item: { imageUrl, price, name, quantity } }) {
+const CartItem = ({ item: { imageUrl, price, name, quantity } }) => {
     return (
         <CartItemContainer>
             <ItemImage src={imageUrl} alt={name} />

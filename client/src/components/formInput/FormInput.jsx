@@ -2,7 +2,7 @@ import React from 'react'
 
 import { FormInputField, FormLabel, InputGroupConatiner } from './FormInputStyles'
 
-function FormInput({ handleChange, label, ...options }) {
+const FormInput = ({ handleChange, label, ...options }) => {
     return (
         <InputGroupConatiner>
             <FormInputField onChange={handleChange} {...options} />

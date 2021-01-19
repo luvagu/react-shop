@@ -10,7 +10,7 @@ import CartItem from '../cartItem/CartItem'
 
 import { CartDropdownButton, CartDropDownContainer, CartItems, EmptyMessage } from './CartDropDownStyles'
 
-function CartDropDown({ cartItems, history, dispatch }) {
+const CartDropDown = ({ cartItems, history, dispatch }) => {
     return (
         <CartDropDownContainer>
             <CartItems>

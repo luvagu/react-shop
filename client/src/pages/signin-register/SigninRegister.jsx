@@ -4,7 +4,7 @@ import SignUp from '../../components/signUp/SignUp'
 
 import { SignInRegisterContainer } from './SigninRegisterStyles'
 
-function SigninRegister() {
+const SigninRegister = () => {
     return (
         <SignInRegisterContainer>
             <SignIn />

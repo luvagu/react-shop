@@ -9,7 +9,7 @@ import FormButton from '../formButton/FormButton'
 import { SignUpContainer } from './SignUpStyles'
 
 
-function SignUp({ signUpStart }) {
+const SignUp = ({ signUpStart }) => {
     const [userCredentials, setUserCredentials] = useState({ displayName: '', email: '', password: '', confirmPassword: '' })
 
     const { displayName, email, password, confirmPassword } = userCredentials

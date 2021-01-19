@@ -3,14 +3,14 @@ import { compose } from 'redux'
 import { createStructuredSelector } from 'reselect'
 import { selectCollectionLoaded } from '../../redux/shop/shop-selectors'
 
-import Spinner from '../../components/spinner/Spinner'
+import WithSpinner from '../../components/withSpinner/WithSpinner'
 import CatalogCollection from '../../pages/catalogCollection/CatalogCollection'
 
 const mapStateToProps = createStructuredSelector({ isLoading: (state) => !selectCollectionLoaded(state) })
 
 const CatalogCollectionsContainer = compose(
     connect(mapStateToProps),
-    Spinner
+    WithSpinner
 )(CatalogCollection)
 
 export default CatalogCollectionsContainer

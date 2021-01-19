@@ -8,7 +8,7 @@ import CatalogMenuItem from '../catalogMenuItem/CatalogMenuItem'
 
 import { CatalogContainer } from './CatalogMenuStyles'
 
-function CatalogMenu({ categories }) {
+const CatalogMenu = ({ categories }) => {
     return (
       <CatalogContainer>
           {categories.map(({ id, ...sectionKeys }) => (

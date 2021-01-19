@@ -8,7 +8,7 @@ import CatalogCollections from '../catalogCollections/CatalogCollections'
 
 import { CatalogOverviewContainer } from './CatalogOverviewStyles'
 
-function CatalogOverview({ collections }) {
+const CatalogOverview = ({ collections }) => {
     return (
         <CatalogOverviewContainer>
             { collections.map(({id, ...collectionKeys}) => (<CatalogCollections key={id} {...collectionKeys} />)) }

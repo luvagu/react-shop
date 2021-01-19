@@ -13,7 +13,7 @@ import CartDropDown from '../cartDropdown/CartDropDown'
 
 import { HeaderContainer, LogoLinkContainer, OptionLink, OptionsContainer } from './HeaderStyles'
 
-function Header({ currentUser, hidden, signOutStart }) {
+const Header = ({ currentUser, hidden, signOutStart }) => {
     return (
         <HeaderContainer>
             <LogoLinkContainer to="/">
