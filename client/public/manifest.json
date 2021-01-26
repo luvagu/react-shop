@@ -1,6 +1,6 @@
 {
   "short_name": "React Shop",
-  "name": "React Ecommerce Shop with FireBase",
+  "name": "React Ecommerce Shop with FireStore DB",
   "icons": [
     {
       "src": "favicon.ico",
